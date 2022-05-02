@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CarouselComponent } from './views/carousel/carousel.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import {MatCardModule} from '@angular/material/card';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
