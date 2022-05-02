@@ -1,0 +1,26 @@
+.mat-card-header {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    height: 10vh;
+}
+
+.card-avatar {
+    /* deve ser dinâmico */
+    background: url('https://github.com/dianamartine.png');
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+h2 {
+    margin-top: -25px;
+    font-size: 1.1em;
+    font-weight: 100;
+}
