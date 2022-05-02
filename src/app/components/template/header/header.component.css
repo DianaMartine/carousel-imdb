@@ -1,6 +1,6 @@
 .toolbar {
     background-color: #2c2c2c;
-    height: 40vh;
+    height: 25vh;
 }
 
 .header {
@@ -19,7 +19,7 @@
 }
 
 .logo {
-    height: 200px;
+    height: 100px;
     width: 200px;
     opacity: .5;
     transition: 1s;
