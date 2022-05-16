@@ -1,30 +1,28 @@
-<mat-card>
-    <mat-card-header class="mat-card-header">
-        <!-- deve ser tudo dinâmico -->
-        <div mat-card-avatar class="card-avatar"></div>
-        <mat-card-title>
-            <h1>Titulo do filme</h1>
-        </mat-card-title>
-        <mat-card-subtitle>
-            <h2>
-                Subtitulo do filme
-                <!-- pode ser a categoria do filme e/ou ano de lançamento -->
-            </h2>
-        </mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://github.com/dianamartine.png" alt="Diana Martine">
-    <mat-card-content>
-        <p>Descrição do filme. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic consectetur saepe numquam
-            voluptatem temporibus,
-            ad totam, doloremque eligendi soluta veritatis reprehenderit fugiat earum dolor, deleniti adipisci nobis
-            fuga necessitatibus dicta.</p>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button>
+<div class="carousel">
+    <mat-card>
+        <ng-container *ngFor='let movie of movies; let i = index;'>
+            <mat-card-header *ngIf='i === currentMovie' [@slideAnimation]='animationType'>
+                <mat-card-title>
+                    {{movie.title}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{movie.year}}
+                </mat-card-subtitle>
+            </mat-card-header>
+
+            <img *ngIf='i === currentMovie' [src]="movie.image" class='slide'[@slideAnimation]='animationType'/>
+
+            <mat-card-content *ngIf='i === currentMovie' [@slideAnimation]='animationType'>
+                <p>{{movie.crew}}</p>
+                <p><b>{{movie.imDbRating}}</b></p>
+            </mat-card-content> 
+        </ng-container>
+
+        <button class="control prev" mat-mini-fab aria-label="Previous" (click)="onPreviousClick()">
             <mat-icon>arrow_back</mat-icon>
         </button>
-        <button mat-button>
+        <button class="control next" mat-mini-fab aria-label="Next" (click)="onNextClick()">
             <mat-icon>arrow_forward</mat-icon>
         </button>
-    </mat-card-actions>
-</mat-card>
+    </mat-card>
+</div>
