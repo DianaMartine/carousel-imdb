@@ -9,18 +9,17 @@ import { transition, trigger, useAnimation } from '@angular/animations';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
   animations: [
-    trigger("slideAnimation", [
-      transition("void => fade", [
-        useAnimation(fadeIn, { params: { time: "500ms" } })
+    trigger('slideAnimation', [
+      transition('void => fade', [
+        useAnimation(fadeIn, { params: { time: '1s' } }),
       ]),
-      transition("fade => void", [
-        useAnimation(fadeOut, { params: { time: "500ms" } })
-      ])
-    ])
-  ]
+      transition('fade => void', [
+        useAnimation(fadeOut, { params: { time: '1s' } }),
+      ]),
+    ]),
+  ],
 })
 export class CarouselComponent implements OnInit {
-
   @Input() animationType = CarouselAnimation.Fade;
 
   public movies: any = [];
@@ -41,7 +40,7 @@ export class CarouselComponent implements OnInit {
         }
         return;
       });
-/*       this.movies.forEach((movie: any) => {
+      /*       this.movies.forEach((movie: any) => {
         this.imdb.getPosters(movie.id).subscribe((data) => {
           console.log(data);
           movie.image = data.posters[0].link;

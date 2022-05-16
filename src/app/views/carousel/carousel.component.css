@@ -42,7 +42,6 @@
 }
 
 @media screen and (min-width: 340px) {
-
   mat-card {
     display: flex;
     flex-direction: column;

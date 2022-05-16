@@ -1,7 +1,7 @@
 export class ImdbFilmModel {
-    items: Object[];
+  items: Object[];
 
-    constructor(items: Object[]) {
-        this.items = items;
-    }
+  constructor(items: Object[]) {
+    this.items = items;
+  }
 }

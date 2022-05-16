@@ -8,20 +8,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImdbService {
   // private apiKey: string = 'k_egoq846u';
-   private apiKey: string = 'k_nfqc43rk';
-
-  /*
-  baseUrl: string = 'https://imdb-api.com/en/API';
-
-  constructor(private http: HttpClient) { }
-
-  getTopMovies(): Observable<ImdbFilmModel> {
-    return this.http.get<ImdbFilmModel>(this.baseUrl + '/MostPopularMovies/' + this.apiKey);
-  } */
+  private apiKey: string = 'k_nfqc43rk';
 
   baseUrl: string = 'http://localhost:3000/items';
   baseUrlPoster: string = `https://imdb-api.com/en/API/Posters/${this.apiKey}/`;
-  imdbModel: ImdbFilmModel[] = [];
 
   constructor(private httpClient: HttpClient) {}
 
@@ -34,13 +24,12 @@ export class ImdbService {
   }
 
   putPosters(id: string, body: any) {
-    console.log('primeira postagem da imagem para a database');
     return this.httpClient
       .put(`${this.baseUrl}/${id}`, body)
       .subscribe((data) => {
-        console.log('id: '+id);
-        console.log('body: '+JSON.stringify(body));
-        console.log('data: '+JSON.stringify(data));
+        console.log('id: ' + id);
+        console.log('body: ' + JSON.stringify(body));
+        console.log('data: ' + JSON.stringify(data));
       });
   }
 }
